@@ -26,18 +26,10 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-  const [message, setMessage] = useState("");
 
-  // Fetching message from backend on mount
-  useEffect(() => {
-    fetch("http://localhost:3005/")
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message));
-  }, []);
 
   return (
     <div>
-      <h1>{message}</h1>
       <RouterProvider router={router} />
     </div>
   )
